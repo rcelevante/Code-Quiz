@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.code-quiz {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+p {
+    font-size: 30px;
+}
+
+button {
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: indigo;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    background-color: plum;
+    color: indigo;
+    transition: 0.9s;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.timer {
+    float: right;
+}
+
+.viewHighScore {
+    float: left;
+}
+
+.hide {
+    display: none;
+}
+
