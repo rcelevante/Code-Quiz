@@ -39,7 +39,7 @@ function showQuestion(questions) {
             button.dataset.correct = answer.correct
         }
         else {
-            sec.setInterval - 10
+            sec.seconds - 10
         }
         button.addEventListener("click", selectAnswer)
         answerButtonsElement.appendChild(button)
