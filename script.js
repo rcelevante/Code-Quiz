@@ -37,9 +37,12 @@ function showQuestion(questions) {
         button.classList.add('btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
+            button.addEventListener("click", setNextQuestion)
+
         }
         else {
-            sec.seconds - 10
+            sec - 10
+            
         }
         button.addEventListener("click", selectAnswer)
         answerButtonsElement.appendChild(button)
