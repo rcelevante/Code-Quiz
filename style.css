@@ -36,7 +36,11 @@ button:focus {
     cursor: pointer;
 }
 
-
+#next-question {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+}
 
 .timer {
     float: right;
@@ -50,3 +54,11 @@ button:focus {
     display: none;
 }
 
+#next-btn {
+    display: none;
+}
+
+.btn {
+    display: grid;
+    grid-column-start: auto;
+}
