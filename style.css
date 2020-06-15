@@ -40,6 +40,7 @@ button:focus {
     text-align: center;
     font-size: 30px;
     margin-top: 50px;
+    
 }
 
 .timer {
@@ -61,4 +62,5 @@ button:focus {
 .btn {
     display: grid;
     grid-column-start: auto;
+    margin: 10px;
 }

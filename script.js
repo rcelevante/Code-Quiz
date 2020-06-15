@@ -10,7 +10,7 @@ startButton.addEventListener("click", startGame)
 startButton.addEventListener("click", pad)
 answerButtonsElement.addEventListener("click", () => {
     currentQuestionIndex++
-    //setNextQuestionElement()
+    
 })
 
 function startGame() {
@@ -18,7 +18,7 @@ function startGame() {
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
-   quizQuestionElement.classList.add('hide')
+    quizQuestionElement.classList.add('hide')
     setNextQuestion()
 }
 
@@ -37,6 +37,9 @@ function showQuestion(questions) {
         button.classList.add('btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
+        }
+        else {
+            sec.setInterval - 10
         }
         button.addEventListener("click", selectAnswer)
         answerButtonsElement.appendChild(button)
@@ -70,22 +73,22 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
-      element.classList.add('correct')
+      element.classList.add("correct")
     } else {
-      element.classList.add('wrong')
+      element.classList.add("wrong")
     }
   }
   
 function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
+    element.classList.remove("correct")
+    element.classList.remove("wrong")
   }
 
 const questions = [
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is:",
         answer: [
-            { text: "javascript", correct: false },
+            { text: "Javascript", correct: false },
             { text: "terminal/bash", correct: true },
             { text: "for loops", correct: false },
             { text: "console.log", correct: false }
@@ -101,7 +104,7 @@ const questions = [
         ]
     },
     {
-        questoion: "Commonly used data types Do NOT include ________:",
+        question: "Commonly used data types DO NOT include ________:",
         answer: [
             { text: "strings", correct: false },
             { text: "booleans", correct: false },
@@ -110,7 +113,7 @@ const questions = [
         ]
     },
     {
-        question: "The condition in an if/else statement is enclosed with ______:",
+        question: "The condition in an if / else statement is enclosed with ______:",
         answer: [
             { text: "quotes", correct: false },
             { text: "curly brackets", correct: false },
@@ -132,7 +135,7 @@ const questions = [
 
 
 var sec = 0;
-function pad ( val ) { return val > 9 ? val : "0" + val; }
+function pad ( val ) { return val > 9 ? val : "0" + val }
 setInterval( function(){
     document.getElementById("seconds").innerHTML=pad(++sec%60);
     document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
@@ -141,12 +144,13 @@ setInterval( function(){
 
 var score = 0;
 var highscore = localStorage.getItem("highscore");
-
-if(highscore !== null){
-    if (score > highscore) {
-        localStorage.setItem("highscore", score);      
+function highScore(score) {
+    if(highscore !== null){
+        if (score > highscore) {
+            localStorage.setItem("highscore", score);      
+        }
     }
-}
-else{
-    localStorage.setItem("highscore", score);
+    else{
+        localStorage.setItem("highscore", score);
+    }
 }
