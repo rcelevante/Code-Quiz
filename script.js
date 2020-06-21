@@ -7,11 +7,21 @@ const nextQuestionElement = document.getElementById("next-question")
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener("click", startGame)
-startButton.addEventListener("click", pad)
+
 answerButtonsElement.addEventListener("click", () => {
     currentQuestionIndex++
-    
 })
+
+
+var sec = 0;
+function timer ( val ) { return val > 9 ? val : "0" + val }
+setInterval( function(){
+    document.getElementById("seconds").innerHTML=timer(++sec%60);
+    document.getElementById("minutes").innerHTML=timer(parseInt(sec/60,10));
+}, 1000);
+
+startButton.addEventListener("click", timer)
+
 
 function startGame() {
     
@@ -23,10 +33,7 @@ function startGame() {
 }
 
 
-function setNextQuestion() {
-    resetState()
-    showQuestion(shuffledQuestions[currentQuestionIndex])
-}
+
 
 function showQuestion(questions) {
     console.log(questions)
@@ -48,6 +55,11 @@ function showQuestion(questions) {
         answerButtonsElement.appendChild(button)
     })
     nextQuestionElement.classList.remove("hide")
+}
+
+function setNextQuestion() {
+    resetState()
+    showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
 function resetState () {
@@ -75,10 +87,11 @@ function selectAnswer(e) {
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
-    if (correct) {
+    if (correct === true) {
       element.classList.add("correct")
     } else {
       element.classList.add("wrong")
+        sec - 10;
     }
   }
   
@@ -137,12 +150,7 @@ const questions = [
 
 
 
-var sec = 0;
-function pad ( val ) { return val > 9 ? val : "0" + val }
-setInterval( function(){
-    document.getElementById("seconds").innerHTML=pad(++sec%60);
-    document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
-}, 1000);
+
 
 
 var score = 0;
