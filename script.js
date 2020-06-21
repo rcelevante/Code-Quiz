@@ -153,7 +153,5 @@ function highScore(score) {
             localStorage.setItem("highscore", score);      
         }
     }
-    else{
-        localStorage.setItem("highscore", score);
-    }
+    
 }
